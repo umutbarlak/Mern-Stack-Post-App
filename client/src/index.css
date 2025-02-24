@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .input-style {
+    @apply border border-gray-300 p-2 rounded-md w-full;
+  }
+  .btn-login {
+    @apply bg-indigo-600 text-white p-2 rounded-md hover:bg-indigo-800;
+  }
+}
