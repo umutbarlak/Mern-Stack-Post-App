@@ -1,4 +1,4 @@
-<h1>Redux Thunk E-Commerce</h1>
+<h1>MERN Stack Post App</h1>
 
 Bu proje, kimlik doğrulama ile kullanıcı kaydı ve girişi yapabilen, kullanıcıların post ekleyip güncelleyebildiği ve silebildiği bir post paylaşım uygulamasıdır.
 
