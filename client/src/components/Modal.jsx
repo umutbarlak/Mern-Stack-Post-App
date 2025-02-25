@@ -21,8 +21,6 @@ const Modal = () => {
   const postCreate = (e) => {
     e.preventDefault();
 
-    console.log(modal.post);
-
     if (modal.post) {
       console.log(postData);
       dispatch(updataPostAction(modal.post._id, postData));
@@ -48,6 +46,7 @@ const Modal = () => {
           <div>
             <label>User</label>
             <input
+              required
               value={postData.user}
               name="user"
               onChange={onChange}
@@ -59,6 +58,7 @@ const Modal = () => {
           <div>
             <label>Title</label>
             <input
+              required
               value={postData.title}
               name="title"
               onChange={onChange}
@@ -70,6 +70,7 @@ const Modal = () => {
           <div>
             <label htmlFor="">Description</label>
             <textarea
+              required
               value={postData.description}
               name="description"
               onChange={onChange}

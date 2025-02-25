@@ -1,15 +1,19 @@
-const postReducer = (state = { posts: [] }, action) => {
+const initialState = { posts: [] };
+
+export const postReducer = (state = initialState, action) => {
   switch (action.type) {
     case "GET_POSTS":
       return { posts: action.payload };
     case "CREATE_POST":
-      return { posts: [...state.posts, action.payload] };
+      return { posts: [action.payload, ...state.posts] };
 
     case "UPDATE_POST":
       const clonePosts = [...state.posts];
-      const foundedId = clonePosts.findIndex((i) => i.id === action.payload.id);
+      const foundedId = clonePosts.findIndex(
+        (i) => i._id === action.payload._id
+      );
 
-      clonePosts[foundedId] = action.payload.post;
+      clonePosts[foundedId] = action.payload;
       return { ...state, posts: clonePosts };
     case "DELETE_POST":
       const filtred = state.posts.filter((post) => post._id !== action.payload);
@@ -19,5 +23,3 @@ const postReducer = (state = { posts: [] }, action) => {
       return state;
   }
 };
-
-export default postReducer;

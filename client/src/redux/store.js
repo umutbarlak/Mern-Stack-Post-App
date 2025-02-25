@@ -2,7 +2,7 @@ import { createStore, applyMiddleware, combineReducers } from "redux";
 import { thunk } from "redux-thunk";
 import { authReducer } from "./reducers/auth";
 import { modalReducer } from "./reducers/modal";
-import postReducer from "./reducers/post";
+import { postReducer } from "./reducers/post";
 
 const initialState = {};
 const reducers = combineReducers({

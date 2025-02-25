@@ -2,10 +2,10 @@ const PostSchema = require("../models/post.js");
 
 const getPosts = async (req, res) => {
   try {
-    const getPosts = await PostSchema.find();
+    const posts = await PostSchema.find();
 
     res.status(200).json({
-      posts: getPosts,
+      posts,
     });
   } catch (error) {
     res.status(500).json({

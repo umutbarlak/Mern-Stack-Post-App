@@ -11,14 +11,15 @@ const Home = ({ token }) => {
 
   useEffect(() => {
     dispatch(getPostsAction());
-  }, [posts]);
+  }, []);
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-10 gap-5">
-      {posts &&
-        posts?.posts?.map((item, index) => (
-          <HomeCard key={index} post={item} />
-        ))}
+      {posts.length > 0 ? (
+        posts?.map((item, index) => <HomeCard key={index} post={item} />)
+      ) : (
+        <div className="text-center text-xl font-bold">Henüz post yok</div>
+      )}
     </div>
   );
 };
